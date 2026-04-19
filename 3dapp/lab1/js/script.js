@@ -38,8 +38,10 @@ function init(){
     if (actions.length === 2) {
       if (mode === "open") {
         actions.forEach(action => {
-          action.timeScale = 1;
           action.reset();
+          action.setLoop(THREE.LoopOnce); 
+          action.clampWhenFinished = true;
+          action.timeScale = 1;
           action.play();
         });
       }
