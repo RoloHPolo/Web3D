@@ -14,23 +14,40 @@ body{
     background: #fea;
     padding: 15px;
     font-family: arial;
+    border-radius: 12px;
 }
 
 #toggleWireframe {
     background: #fea;
     padding: 15px;
     font-family: arial;
+    border-radius: 12px;
 }
 
 #rotate {
     background: #fea;
     padding: 15px;
     font-family: arial;
+    border-radius: 12px;
+}
+
+#loadCan {
+    background: #fea;
+    padding: 15px;
+    font-family: arial;
+    border-radius: 12px;
+}
+
+#loadCube {
+    background: #fea;
+    padding: 15px;
+    font-family: arial;
+    border-radius: 12px;
 }
 
 #threeContainer {
     width: 100%;
-    height: 100vh; position: relative;
+    height: 70vh; position: relative;
     display: block;
     overflow: hidden;
 }

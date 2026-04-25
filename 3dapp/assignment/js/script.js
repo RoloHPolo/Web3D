@@ -1,10 +1,12 @@
 let scene, camera, renderer, clock, mixer, actions = [], mode, isWireframe = false;
 let loadedModel;
+const assetPath = './assets/models/';
+const loader = new THREE.GLTFLoader();
+
 
 init();
 
 function init(){
-  const assetPath = './assets/models/';
 
   clock = new THREE.Clock();
 
@@ -14,76 +16,84 @@ function init(){
   camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(-5, 25, 20);
   
-  const ambient = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+  const ambient = new THREE.AmbientLight(0xffffff, 2.5);
   scene.add(ambient);
 
-  const light = new THREE.DirectionalLight(0xFFFFFF, 2);
-  light.position.set(0, 10, 2);
-  scene.add(light);
+  const directional = new THREE.DirectionalLight(0xffffff, 3);
+  directional.position.set(5, 10, 7);
+  scene.add(directional);
+
+  const fillLight = new THREE.DirectionalLight(0xffffff, 1.5);
+  fillLight.position.set(-5, 5, -5);
+  scene.add(fillLight);
 
   const canvas = document.getElementById('threeContainer');
   renderer = new THREE.WebGLRenderer({ canvas: canvas });
   renderer.setPixelRatio(window.devicePixelRatio);
   resize();
 
-  document.body.appendChild(renderer.domElement);
 
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.target.set(1, 2, 0);
   controls.update();
 
-  mode = 'open';
-  const btn = document.getElementById("btn");
-  btn.addEventListener('click', function() {
-    if (actions.length === 2) {
-      if (mode === "open") {
+  setupButtons();
+
+  loadModel('can.glb');
+
+  window.addEventListener('resize', resize, false);
+
+  animate();
+}
+
+function setupButtons() {
+  const btn = document.getElementById('btn');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      if (actions.length > 0) {
         actions.forEach(action => {
           action.reset();
-          action.setLoop(THREE.LoopOnce); 
+          action.setLoop(THREE.LoopOnce);
           action.clampWhenFinished = true;
           action.timeScale = 1;
           action.play();
         });
+      } else {
+        console.warn('No animations found');
       }
-    }
-  });
-
-  const wireframeBtn = document.getElementById("toggleWireframe");
-  wireframeBtn.addEventListener('click', function () {
-    isWireframe = !isWireframe;
-    toggleWireframe(isWireframe);
-  })
-
-  const rotateBtn = document.getElementById("rotate");
-  rotateBtn.addEventListener('click', function() {
-    if (loadedModel) {
-      const axis = new THREE.Vector3(0, 1, 0);
-      const angle = Math.PI / 8;
-      loadedModel.rotateOnAxis(axis, angle);
-    } else {
-      console.warn('ts not loaded');
-    }
-  });
-  
-
-  const loader = new THREE.GLTFLoader();
-  loader.load(assetPath + 'can.glb', function(gltf) {
-    const model = gltf.scene;
-    scene.add(model);
-
-    loadedModel = model;
-
-    mixer = new THREE.AnimationMixer(model);
-    const animations = gltf.animations;
-
-    animations.forEach(clip => {
-      const action = mixer.clipAction(clip);
-      actions.push(action);
     });
-  });
+  }
 
-  window.addEventListener('resize', resize, false);
-  animate();
+  const wireframeBtn = document.getElementById('toggleWireframe');
+  if (wireframeBtn) {
+    wireframeBtn.addEventListener('click', function () {
+      isWireframe = !isWireframe;
+      toggleWireframe(isWireframe);
+    });
+  }
+
+  const rotateBtn = document.getElementById('rotate');
+  if (rotateBtn) {
+    rotateBtn.addEventListener('click', function() {
+      if (loadedModel) {
+        const axis = new THREE.Vector3(0, 1, 0);
+        const angle = Math.PI / 8;
+        loadedModel.rotateOnAxis(axis, angle);
+      } else {
+        console.warn('Model not loaded');
+      }
+    });
+  }
+
+  const canBtn = document.getElementById('loadCan');
+  if (canBtn) {
+    canBtn.addEventListener('click', () => loadModel('can.glb'));
+  }
+
+  const cubeBtn = document.getElementById('loadCube');
+  if (cubeBtn) {
+    cubeBtn.addEventListener('click', () => loadModel('rubiks.glb'));
+  }
 }
 
 function animate(){
@@ -97,6 +107,8 @@ function animate(){
 }
 
 function toggleWireframe(enable) {
+  if (!loadedModel) return;
+
   scene.traverse(function (object) {
     if (object.isMesh) {
       object.material.wireframe = enable;
@@ -106,16 +118,46 @@ function toggleWireframe(enable) {
 
 function resize() {
   const canvas = document.getElementById('threeContainer');
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const parent = canvas.parentElement;
+
+  const width = parent.clientWidth;
+  const height = canvas.clientHeight;
 
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
-  renderer.setSize(width, height);
+
+  renderer.setSize(width, height, false);
 }
 
 function update(){
   requestAnimationFrame(update);
 
   renderer.render(scene, camera);
+}
+
+function loadModel(modelFile) {
+  
+  if (loadedModel) {
+    scene.remove(loadedModel);
+    loadedModel = null;
+  }
+
+  actions = [];
+
+  loader.load(assetPath + modelFile, function(gltf) {
+    const model = gltf.scene;
+    scene.add(model);
+
+    loadedModel = model;
+
+    mixer = new THREE.AnimationMixer(model);
+
+    gltf.animations.forEach(clip => {
+      const action = mixer.clipAction(clip);
+      actions.push(action);
+    });
+
+  });
+
+  
 }
