@@ -11,7 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
     <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_button.css">
@@ -22,20 +21,11 @@
 </head>
 
 <body>
-    <a id="camera-btn">
-        <div>
-            <i class="fa fa-camera" aria-hidden="true"></i>"
-        </div>
-    </a>
-
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="logo">
       <a class="navbar-brand" href="index.html">
-        <h1>1</h1>
-        <h1>oca</h1>
-        <h2>Cola</h2>
-        <h3>Journey</h3>
-        <p>Refreshing the world, one story at a time</p>
+        <h1>Web 3D Applications</h1>
+        <p>A Modelling Showcase</p>
       </a>
     </div>
 
@@ -52,7 +42,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a class="dropdown-item" href="index.html">Home</a>
-            <a class="dropdown-item" href="models.html">Coca Cola</a>
+            <a class="dropdown-item" href="models.html">Models</a>
             <a class="dropdown-item" href="about.html">About</a>
             <a class="dropdown-item" href="contact.html">Contact</a>
           </div>
@@ -74,9 +64,12 @@
               <canvas id="threeContainer"></canvas>
             </div>
             <div class="col-md-4 d-flex flex-column gap-2 justify-content-center">
+              <h1>Models:</h1>
               <button id="loadCan">Load Can</button>
               <button id="loadCube">Load Rubik's Cube</button>
+              <button id="loadThing">Load Thing (undecided)</button>
               <hr>
+              <h1>Visual Effects</h1>
               <button id="btn">Animation</button>
               <button id="toggleWireframe">Toggle Wireframe</button>
               <button id="rotate">Rotate</button>
@@ -87,113 +80,42 @@
         
       </div>
     </div>
-
     <div class="container-fluid main-contents">
-
-      
-
   </div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <div class="navbar-text float-left copyright">
+        <p>
+          <span class="align-baseline"></span>
+          
+        </p>
+      </div>
+      <div class="navbar-text social mx-auto">
+        <a href="#">
+          <i class="fa fa-facebook-square" aria-hidden="true">
+          </i>
+        </a>
+        <a href="#">
+          <i class="fa fa-twitter" aria-hidden="true">
+          </i>
+        </a>
+        <a href="#">
+          <i class="fa fa-google-plus" aria-hidden="true">
+          </i>
+        </a>
+        <a href="#">
+          <i class="fa fa-github" aria-hidden="true">
+          </i>
+        </a>
+      </div>
+    </div>
+  </nav>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lil-gui@0.18"></script>
   <script src="./js/script.js"></script>
-
-  <div class="dg ac">
-    <div class="dg ,aom a" style="user-select: none; width: 245px;">
-      <div style="width: 6px; margin-left: -3px; height: 226px; cursor: ew-resize; 
-      position: absolute;"></div>
-      <ul style="height: auto;">
-        <li class="folder">
-          <div class="dg">
-            <ul>
-              <li class="title">Spot</li>
-              <li class="cr boolean">
-                <div>
-                  <span class="property-name">enable</span>
-                  <div class="c">
-                    <input type="checkbox">
-                  </div>
-                </div>
-              </li>
-              <li class="cr color">
-                <div>
-                  <span class="property-name">colour</span>
-                  <div class="c" style="user-select: none;">
-                    <input type="text" style="outline: none; text-align: center; color: rgb(0, 0, 0); border: 0px; font-weight: bold; text-shadow: rgba(255, 255, 255, 0.7) 0px 1px 1px; background-color: rgb(255, 255, 255);">
-                    <div class="selector" style="width: 122px; height: 102px; padding: 3px; background-color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px;">
-                      <div class="field-knob" style="position: absolute; width: 12px; height: 12px; border: 2px solid rgb(0, 0, 0); box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px; border-radius: 12px; z-index: 1; margin-left: -7px; margin-top: -7px; background-color: rgb(255, 255, 255);"></div>
-                      <div class="saturation-field" style="width: 100px; height: 100px; border: 1px solid rgb(85, 85, 85); margin-right: 3px; display: inline-block; cursor: pointer; background: -webkit-linear-gradient(left, rgb(255, 255, 255) 0%, rgb(255, 0, 0) 100%);">
-                        <div style="width: 100%; height: 100%; background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);"></div>
-                      </div>
-                      <div class="hue-field" style="width: 15px; height: 100px; border: 1px solid rgb(85, 85, 85); cursor: ns-resize; position: absolute; top: 3px; right: 3px; background: -webkit-linear-gradient(rgb(255, 0, 0) 0%, rgb(255, 0, 255) 17%, rgb(0, 0, 255) 34%, rgb(0, 255, 255) 50%, rgb(0, 255, 0) 67%, rgb(255, 255, 0) 84%, rgb(255, 0, 0) 100%);">
-                        <div class="hue-knob" style="position: absolute; width: 15px; height: 2px; border-right: 4px solid rgb(255, 255, 255); z-index: 1; margin-top: 100px;"></div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="cr number has-slider">
-                <div>
-                  <span class="property-name">distance</span>
-                  <div class="c">
-                    <div>
-                      <input type="text">
-                    </div>
-                    <div class="slider">
-                      <div class="slider-fg" style="width: 100%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="cr number has-slider">
-                <div>
-                  <span class="property-name">angle</span>
-                  <div class="c">
-                    <div>
-                      <input type="text">
-                    </div>
-                    <div class="slider">
-                      <div class="slider-fg" style="width: 23.7993%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="cr number has-slider">
-                <div>
-                  <span class="property-name">penumbra</span>
-                  <div class="c">
-                    <div>
-                      <input type="text">
-                    </div>
-                    <div class="slider">
-                      <div class="slider-fg" style="width: 0%;"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="cr boolean">
-                <div>
-                  <span class="property-name">helper</span>
-                  <div class="c">
-                    <input type="checkbox">
-                  </div>
-                </div>
-              </li>
-              <li class="cr boolean">
-                <div>
-                  <span class="property-name">moving</span>
-                  <div class="c">
-                    <input type="checkbox">
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-      <div class="close-button close-bottom" style="width: 245px;">Close Controls</div>
-    </div>
-  </div>
 </body>
 </html>

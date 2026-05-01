@@ -1,23 +1,10 @@
-/* CSS Rules for Lab 1 using Bootstrap.  Note, these rules are laid out mobile first.  
-	That is, the smaller screen rules are shown first
-
-    Note, that CSS rule will propoagte up to larger devices, unless you modify them with a 
-    media query and change the rule
-*/
-
-/* Method to declare your own fonts */
-@font-face {
-    font-family: cocaColaFont;
-    src: url(assets/fonts/lokicola.ttf);
-}
-
 
 /* Extra small devices (portrait phones, less than 576px)
    No media query since this is the default in Bootstrap
 */
 body {
     padding-bottom: 5px;
-    background-color: rgb(245, 164, 98);
+    background-color: rgb(31, 97, 51);
 }
 
 .main_contents {
@@ -38,43 +25,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main_3d_image {
-    background-image: url(assets/images/main_3D.jpg);
-    background-repeat: no-repeat;
-    height: 201px;
+    background: url("assets/images/Sunset.jpg") center center / cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 #main_text {
-    float: left;
-    margin: 5%;
-    width: 90%;
-    display: block;
-    background-color: rgba(255,255,255,0.6);
-    padding: 10px;
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
 }
+
 #main_text h2 {
-    color: rgba(0,102,153,1);
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 #main_text h3 {
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 #main_text p {
-    font-size: 12px;
-    margin: 0px;
-    line-height: 1.2;
-} 
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
 
 .card {
     border: 0px solid rgba(0,0,0,.125);
     /* border-radius: .25rem;*/
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgb(245, 164, 98);
+    background-color: rgb(31, 97, 51);
 }
 
 .logo {
@@ -82,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo h1 {
-    font-family: cocaColaFont; /* You don't need to repeat this for each media query as it is propagated */
+    font-family: sans-serif; /* You don't need to repeat this for each media query as it is propagated */
     font-size: 29px;
     margin: 0;
     margin-top: -10px;
@@ -94,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 .logo h2 {
-    font-family: cocaColaFont;
+    font-family: sans-serif;
     font-size: 31px;
     margin-top: -6px;
     margin-bottom: -15px;
@@ -250,18 +237,26 @@ There is plenty more styling to do than indicated here, in mobile it still defau
 @media (min-width: 576px) {
 
     body {
-        background-color: rgb(202, 181, 181);
+        background-color: rgb(50, 110, 50);
     }
 
     #main_3d_image {
-        background-image: url(assets/images/main_3D_768.jpg);
-        background-repeat: no-repeat;
-        height: 288px;
+        background: url("assets/images/Sunset.jpg") center center / cover no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
     #main_text {
-        float: right;
-        margin-top: 7%;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 50px;
+        border-radius: 20px;
+        max-width: 900px;
+        width: 100%;
     }
 
     .card {
@@ -269,7 +264,7 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         /* border-radius: .25rem;*/
         margin-top: 10px;
         margin-bottom: 10px;
-        background-color: rgb(202, 181, 181);
+        background-color: rgb(50, 110, 50);
     }
 
     .navbar_coca_cola {
@@ -308,13 +303,18 @@ There is plenty more styling to do than indicated here, in mobile it still defau
 @media (min-width: 768px) { 
     
     body {
-        background-color: rgb(218, 216, 148);
+        background-color: rgb(85, 128, 76);
     }
 
     #main_3d_image {
-        background-image: url(assets/images/main_3D_970.jpg);
-        background-repeat: no-repeat;
-        height: 363px;
+        background: url("assets/images/Sunset.jpg") center center / cover no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
     .card {
@@ -322,26 +322,32 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         /* border-radius: .25rem;*/
         margin-top: 10px;
         margin-bottom: 10px;
-        background-color: rgb(218, 216, 148);
+        background-color: rgb(85, 128, 76);
     }
 
     #main_text {
-        float: right;
-        margin-top: 7%;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 50px;
+        border-radius: 20px;
+        max-width: 900px;
+        width: 100%;
     }
 
     #main_text h2 {
         color: crimson;
-        font-size: 30px;
+        font-size: 3rem;
+        margin-bottom: 20px;
     }
     
     #main_text h3 {
-        color: darkcyan;
-        font-size:22px;
+        color: rgb(0, 139, 69);
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     
     #main_text p {
-        font-size: 15px;
+        font-size: 1.3rem;
+        line-height: 1.7;
     }
     
     /* ++++++++++++++++++++++++++LOGO+++++++++++++++++++++++*/
@@ -353,7 +359,7 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     }
 
     .logo h1 {
-        font-family: cocaColaFont; /* You don't need to repeat this for each media query as it is propogated */
+        font-family: sans-serif; /* You don't need to repeat this for each media query as it is propogated */
         font-size: 41px;
         margin: 0;
         margin-top: 0px;
@@ -365,7 +371,7 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     }
 
     .logo h2 {
-        font-family: cocaColaFont;
+        font-family: sans-serif;
         font-size: 43px;
         margin-top: 5px;
         margin-bottom: -15px;
@@ -426,32 +432,43 @@ There is plenty more styling to do than indicated here, in mobile it still defau
 @media (min-width: 992px) { 
     
     body {
-        background-color: rgb(185, 185, 178);
+        background-color: rgb(99, 128, 101);
     }
 
     #main_3d_image {
-        background-image: url(assets/images/main_3D_1400a.jpg);
-        background-repeat: no-repeat;
-        height: 500px;
+        background: url("assets/images/Sunset.jpg") center center / cover no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
     #main_text {
-        float: right;
-        margin-top: 20%;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 50px;
+        border-radius: 20px;
+        max-width: 900px;
+        width: 100%;
     }
 
     #main_text h2 {
         color: crimson;
-        font-size: 30px;
+        font-size: 3rem;
+        margin-bottom: 20px;
     }
     
     #main_text h3 {
-        color: darkcyan;
-        font-size:22px;
+        color: rgb(0, 139, 69);
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     
     #main_text p {
-        font-size: 15px;
+        font-size: 1.3rem;
+        line-height: 1.7;
     }
 
     .card {
@@ -459,7 +476,7 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         /* border-radius: .25rem;*/
         margin-top: 10px;
         margin-bottom: 10px;
-        background-color: rgb(185, 185, 178);
+        background-color: rgb(99, 128, 101);
     }
 
     .logo {
@@ -467,7 +484,7 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     }
 
     .logo h1 {
-        font-family: cocaColaFont;
+        font-family: sans-serif;
         font-size: 59px;
         margin: 0;
         margin-top: 0px;
@@ -479,7 +496,7 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     }
 
     .logo h2 {
-        font-family: cocaColaFont;
+        font-family: sans-serif;
         font-size: 65px;
         margin-top: 7px;
         margin-bottom: -25px;

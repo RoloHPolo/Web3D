@@ -11,35 +11,42 @@ body{
 }
 
 #btn{
-    background: #fea;
+    background: rgb(216, 203, 201);
     padding: 15px;
     font-family: arial;
     border-radius: 12px;
 }
 
 #toggleWireframe {
-    background: #fea;
+    background: rgb(216, 203, 201);
     padding: 15px;
     font-family: arial;
     border-radius: 12px;
 }
 
 #rotate {
-    background: #fea;
+    background: rgb(216, 203, 201);
     padding: 15px;
     font-family: arial;
     border-radius: 12px;
 }
 
 #loadCan {
-    background: #fea;
+    background: rgb(216, 203, 201);
     padding: 15px;
     font-family: arial;
     border-radius: 12px;
 }
 
 #loadCube {
-    background: #fea;
+    background: rgb(216, 203, 201);
+    padding: 15px;
+    font-family: arial;
+    border-radius: 12px;
+}
+
+#loadThing {
+    background: rgb(216, 203, 201);
     padding: 15px;
     font-family: arial;
     border-radius: 12px;
@@ -50,6 +57,8 @@ body{
     height: 70vh; position: relative;
     display: block;
     overflow: hidden;
+    border: 3px solid #c4bfbf;
+    border-radius: 5px;
 }
 
 #gui-container {
@@ -67,3 +76,8 @@ img {
 img.clicked {
     transform: scale(1.5);
 }
+
+button:active {
+    transform: scale(0.97);
+}
+
