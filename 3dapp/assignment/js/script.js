@@ -65,7 +65,7 @@ function init(){
 
   setupButtons();
 
-  loadModel('can.glb');
+  loadModel('can.glb', 'A model of a Coca-Cola can, complete with a tab opening animation.');
 
   window.addEventListener('resize', resize, false);
 
@@ -124,7 +124,7 @@ function setupButtons() {
   if (canBtn) {
     canBtn.addEventListener('click', function() {
       playModelButtonSound();
-      loadModel('can.glb');
+      loadModel('can.glb', 'A model of a Coca-Cola can, complete with a tab opening animation.');
     }); 
   }
 
@@ -132,7 +132,7 @@ function setupButtons() {
   if (cubeBtn) {
     cubeBtn.addEventListener('click', function() {
       playModelButtonSound();
-      loadModel('rubiks.glb');
+      loadModel('rubiks.glb', 'A model of a Rubiks Cube, whose animation turns the faces of the cube authentically.');
     });
   }
 
@@ -197,7 +197,7 @@ function update(){
   renderer.render(scene, camera);
 }
 
-function loadModel(modelFile) {
+function loadModel(modelFile, modelName) {
   isRotating = false;
   if (loadedModel) {
     scene.remove(loadedModel);
@@ -220,6 +220,11 @@ function loadModel(modelFile) {
     });
 
   }); 
+
+  const title = document.getElementById("modelTitle");
+  if (title) {
+    title.textContent = modelName;
+  }
 }
 
 function setupLightingGUI() {
