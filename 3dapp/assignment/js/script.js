@@ -136,6 +136,14 @@ function setupButtons() {
     });
   }
 
+  const chestBtn = document.getElementById('loadChest');
+  if (chestBtn) {
+    chestBtn.addEventListener('click', function() {
+      playModelButtonSound();
+      loadModel('chest.glb', 'A model of a Treasure Chest (that is unfortunately empty), which you can open with its animation.');
+    });
+  }
+  
   
 }
 
@@ -211,7 +219,7 @@ function loadModel(modelFile, modelName) {
     scene.add(model);
 
     loadedModel = model;
-
+    
     mixer = new THREE.AnimationMixer(model);
 
     gltf.animations.forEach(clip => {
