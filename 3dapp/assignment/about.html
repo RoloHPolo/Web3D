@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
 
-<title>Home Page</title>
+<title>About Page</title>
 </head>
 
 <body>
@@ -53,7 +53,86 @@
 
   <div class="container-fluid">
     <br>
-    
+      <h1><strong>About</strong></h1>
+      My website is designed to show a small selection of 3D models, with animations attached to each one. It's designed to also have multiple ways to interact with the model, such as changing the lighting settings, rotating the model, and showing its wireframe.
+      It also uses sound effects on button presses, with there being two different sound effects used - one tied to the buttons that switch the loaded model, and the other tied to the model interaction buttons.
+      <div class="mt-4"></div>
+      <h2>3D Models</h2>
+      For this website, I developed three 3D models using Blender.
+      <br>
+      <hr>
+      The first 3D model was a <strong>Coke can</strong>, with an animation showing the ring pull and tab moving as it would when being opened.
+      This was mostly developed using guidance from lab material, but changes were made to the top of the can to give it a lip over the top,
+      making it look more realistic to the soft drink cans that are bought in stores.
+      <div class="aboutCenter">
+        <img src="./assets/images/canfull.png" alt="Model of the Can in Blender">
+      </div>
+      <hr>
+      My second model was of a <strong>Rubik's Cube</strong>. This model didn't require use of added textures unlike the Coke can, instead just using coloured materials. 
+      The cube was made out of three arrays of smaller cubes, with all cubes separated to become individual objects. Each cube had a varying number of coloured materials applied.
+      A corner piece had three materials to account for the adjacent colours, the edge pieces had two materials, and the center pieces had one.
+      All individual cubes had their rotation origin set to the center of the larger cube, so that all cubes would rotate from the same point, allowing the sides to be rotated as one would expect from a real Rubik's Cube.
+      <br><br>
+      The animation for this model showcases the cube in motion, making a total of 16 rotation moves that cycle the cube back into a solved state.
+      <div class="aboutCenter">
+        <img src="./assets/images/cubefull.png" alt="Model of the Rubik's Cube in Blender">
+      </div>
+      My third model was of a <strong>AAAAAHHHHHH I DON'T KNOW YET IM SORRYYYYYY</strong>
+      <div class="mt-4"></div>
+      <hr>
+      <h2>Design</h2>
+      Bootstrap was used to handle the layout of all the HTML elements of the website. 
+      The 3D models are contained using a Bootstrap canvas, which Threejs uses as its rendering target.
+      Bootstrap was also used to create a navbar.
+      <br><br>
+      The webpages are designed to resize and reorder its components using Bootstrap, to ensure it looks presentable on multiple devices of different sizes.
+      This is done through use of Bootstrap grids and utility classes.
+      <hr>
+      <h2>Integration</h2>
+      Two <strong>audio elements</strong> were added to supplement the page containing the 3D models.
+      There are two types of button on the Models page - buttons for loading models, and buttons for interacting with the models. 
+      The model loader buttons play their own sound, while interaction buttons play a different sound.
+      <br><br>
+      This is done through the onClick elements on each button, which when triggered, also call a custom function that handles the audio playback.
+      This was done to provide the user with noticeable feedback beyond the visual differences that each button would provide, helping the website feel more user friendly.
+      <hr>
+      <h2>Model Interaction</h2>
+      The OrbitControls addon was used with ThreeJS to allow the user to view the models from different angles.
+      This provides the 3D model container with an orbiting camera that the user can manipulate using their mouse.
+      <br><br>
+      The scene is lit using a directional light as well as an ambient light. 
+      The settings of these lights can be changed by the user by interacting with the panel GUI on the top right hand corner of the page.
+      <br><br>
+      To the right of the 3D Model Container on the Models page are two groups of buttons, using headers to differentiate between groups.
+      The top group of buttons, titled "Models", are used to load the different models into the container.
+      There is one button for each available model.
+      <br>
+      The bottom group of buttons, titled "Visual Effects", are used to alter the models in different ways.
+      There exists three "Visual Effects" buttons:
+      <br> <strong>The "Animation" button</strong> plays the model's associated animation one time.
+      <br> <strong>The "Wireframe" button</strong> toggles whether the wireframe of the model or the full render is displayed.
+      <br> <strong>The "Rotate" button</strong> is a toggle that when enabled, continually rotates the model on a specified axis, and at a specified speed.
+      The axis and speed of this rotation can also be altered by the user through the aforementioned panel GUI at the top right corner of the page, under the "Rotation" folder.
+      <hr>
+      <h2>Testing</h2>
+      Testing was conducted by providing users access to the website locally on my home PC.
+      No information on the website or the module was given.
+      <br>
+      Users responded positively to the interaction capabilities of the models, especially describing the animations of the Rubik's Cube and the [] to be satisfying to watch.
+      The rotation effect button seemed to also be received well.
+      <br><br>
+      Feedback was given on the general look of the web pages, with it being said that they felt a bit dull.
+      This provided the users with larger focus on the models, which was the primary goal of the website, however more care to make the backgrounds and layouts more interesting could be taken in the future.
+      <hr>
+      <h2>Deeper Understanding</h2>
+      Some deeper understanding of the content is seen in the models chosen.
+      While I did use the Coke can example from the labs, the other two models contained some more complex animations and utilised materials differently.
+      <br>
+      On top of this, it can be argued that my extension of the "Rotation" function from how it was covered in the labs shows deeper understanding.
+      Instead of rotating a set amount for each button click, it toggles a continuous rotation. Furthermore, the parameters for the rotation are tied directly into the GUI panel,
+      providing more agency to the user.
+      <br>
+      <br>
     <br>
   </div>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

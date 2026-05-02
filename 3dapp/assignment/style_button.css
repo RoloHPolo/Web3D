@@ -81,3 +81,11 @@ button:active {
     transform: scale(0.97);
 }
 
+.aboutMain {
+    text-align: left;
+}
+
+.aboutCenter {
+    text-align: center;
+    margin: 10px;
+}
