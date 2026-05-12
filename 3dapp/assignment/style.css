@@ -1,7 +1,3 @@
-
-/* Extra small devices (portrait phones, less than 576px)
-   No media query since this is the default in Bootstrap
-*/
 body {
     padding-bottom: 5px;
     background-color: rgb(31, 97, 51);
@@ -11,9 +7,6 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
-/* Some simple CSS rules for styling p, h1 to h6, etc. in the main contents container
-*/
 
 p {
 	font-family: 'Open Sans', sans-serif;
@@ -58,7 +51,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .card {
     border: 0px solid rgba(0,0,0,.125);
-    /* border-radius: .25rem;*/
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: rgb(31, 97, 51);
@@ -69,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo h1 {
-    font-family: sans-serif; /* You don't need to repeat this for each media query as it is propagated */
+    font-family: sans-serif;
     font-size: 29px;
     margin: 0;
     margin-top: -10px;
@@ -108,44 +100,24 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 3px;
 }
 
-/* CSS rule to overwrite the navbar-default background and border color — again, helps to stop your site looking like a Bootstrap clone! 
-*/
-
 .navbar_coca_cola {
-    background-color: #760003; /* Set navbar background color */
-    /* border-color: yellow; Sets the navbar border color */
-    /* border-style: solid; */
+    background-color: #760003;
     border-width: 0px;
     min-height: 70px;
 }
 
-/* CSS rule to overwrite the navbar-brand font color
-*/
 .navbar_coca_cola .navbar-brand {
     color: rgb(245, 235, 235);
  }
     
-/* CSS rule to overwrite the navbar-brand font hover color
-*/
 .navbar_coca_cola .navbar-brand:hover {
     color: green;
 }
-
-/* NAVIGATION MENU
-*/
-
-/* CSS rules to overwrite the position of the Bootstrap menu
-Bootstrapbay Bootstrap Tutorial Part 11 — CSS Modifications to Navbar and Buttons shows how to do this using Bootstrap 3, the principle should be the same: https://www.youtube.com/watch?v=7v2yC3GyDHU  
-
-There is plenty more styling to do than indicated here, in mobile it still defaults to Bootstrap CSS on dropdown!
-*/
 
 .navbar_coca_cola .navbar-nav > li > a {
     color: white;  
 }
 
-/* CSS rule to overwrite the bootstrap.css text hover color on the navbar
-*/
 .navbar_coca_cola .navbar-nav > li > a:hover, 
 .navbar_coca_cola .navbar-nav > li > a:focus {
     color: green;  
@@ -155,26 +127,18 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     margin-top: 0px;
 }
 
-/* CSS rule to overwrite the bootstrap.css rules for setting the active font color and background colour
-*/
 .navbar_coca_cola .navbar-nav .nav-item > .active, 
 .navbar_coca_cola .navbar-nav > .active > a:hover, 
 .navbar_coca_cola .navbar-nav > .active > a:focus {
-    color:  #760003; /* Font color for active font */
-    background-color: #3399ff; /* Blue color for background */
+    color:  #760003;
+    background-color: #3399ff;
 }
 
-/* A set of CSS rules to change the Bootstrap defaults for the menu link text color, hover, background, focus
-*/
-    
-/* CSS rule to overwrite the bootstrap.css text hover color on the navbar
-*/
 .navbar_coca_cola .navbar-nav > li > a:hover, 
 .navbar_coca_cola  .navbar-nav > li > a:focus {
     color: green;  
 }
 
-/* These next two CSS rules control the style of the icon bar */
 .navbar_coca_cola .navbar-toggler {
     border-color: white;
 }
@@ -187,31 +151,21 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     outline: none !important;
 }
 
-/* Let's style the dropdown menu
-*/
-
 .dropdown-menu {
     text-align: -webkit-left;
-    background-color: #eb9a91;
-    margin-top: 20px; /* Experiment to move the dropdown menu down */
+    background-color: #8ad6a9;
+    margin-top: 20px; 
 }
 
 .dropdown-menu
 .dropdown-item {
-    color: #f1ee08;
+    color: #384238;
 }
 
 .dropdown-menu
 .dropdown-item:hover {
     color: #030303;
-    background-color: #e98074;
-}
-
-/* CSS rule to style the footer */
-.footer {
-    color: #FFF;
-    background-color: #760003;
-    height: 50px;
+    background-color: rgb(104, 138, 99);
 }
 
 .navbar-text > a {
@@ -224,14 +178,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     color: rgb(64, 228, 15);
     font-size: 15px;
     text-decoration: none;
-}
-
-.copyright {
-    padding-top: 13px;
-}
-
-.social {
-    padding-top: 0px;
 }
 
 @media (min-width: 576px) {
@@ -261,7 +207,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
 
     .card {
         border: 0px solid rgba(0,0,0,.125);
-        /* border-radius: .25rem;*/
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: rgb(50, 110, 50);
@@ -270,12 +215,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
     .navbar_coca_cola {
         background-color: grey; 
         min-height: 90px;
-    }
-
-    /* CSS rule to style the footer */
-    .footer {
-        background-color: #257600;
-        height: 60px;
     }
 
     .navbar-text > a {
@@ -287,19 +226,8 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         font-size: 18px;
     }
 
-    .copyright {
-        padding-top: 20px;
-    }
-
-    .social {
-        padding-top: 7px;
-    }
-
 }
 
-
-/* Medium devices (tablets, 768px and up)
-*/
 @media (min-width: 768px) { 
     
     body {
@@ -319,7 +247,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
 
     .card {
         border: 0px solid rgba(0,0,0,.125);
-        /* border-radius: .25rem;*/
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: rgb(85, 128, 76);
@@ -350,16 +277,12 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         line-height: 1.7;
     }
     
-    /* ++++++++++++++++++++++++++LOGO+++++++++++++++++++++++*/
-    
-    /* CSS rule to style the mobile logo */
-
     .logo {
         margin-top: 3px;
     }
 
     .logo h1 {
-        font-family: sans-serif; /* You don't need to repeat this for each media query as it is propogated */
+        font-family: sans-serif;
         font-size: 41px;
         margin: 0;
         margin-top: 0px;
@@ -403,12 +326,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         min-height: 90px;
     }
 
-    /* CSS rule to style the footer */
-    .footer {
-        background-color: #b890b1;
-        height: 60px;
-    }
-
     .navbar-text > a {
         font-size: 10px;
     }
@@ -417,18 +334,8 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         color: rgb(12, 5, 3);
         font-size: 18px;
     }
-
-    .copyright {
-        padding-top: 20px;
-    }
-
-    .social {
-        padding-top: 7px;
-    }
 }
 
-/* Large devices (desktops, 992px and up)
-*/
 @media (min-width: 992px) { 
     
     body {
@@ -473,7 +380,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
 
     .card {
         border: 0px solid rgba(0,0,0,.125);
-        /* border-radius: .25rem;*/
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: rgb(99, 128, 101);
@@ -528,7 +434,6 @@ There is plenty more styling to do than indicated here, in mobile it still defau
         min-height: 120px;
     }
 
-    /* CSS rule to style the footer */
     .footer {
         background-color: grey;
         height: 75px;
