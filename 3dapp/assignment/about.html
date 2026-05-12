@@ -53,7 +53,7 @@
   <div class="container-fluid">
     <br>
       <h1><strong>About</strong></h1>
-      My website is designed to show a small selection of 3D models, with animations attached to each one. It's designed to also have multiple ways to interact with the model, such as changing the lighting settings, rotating the model, and showing its wireframe.
+      My website is designed to show a small selection of 3D models, with animations attached to each one. It's designed to also have multiple ways to interact with the model, such as changing the lighting settings, rotating the model, showing its wireframe, as well as an example of a shader effect that can be placed on the models.
       It also uses sound effects on button presses, with there being two different sound effects used - one tied to the buttons that switch the loaded model, and the other tied to the model interaction buttons.
       <div class="mt-4"></div>
       <h2>3D Models</h2>
@@ -76,6 +76,7 @@
       <div class="aboutCenter">
         <img src="./assets/images/cubefull.png" alt="Model of the Rubik's Cube in Blender">
       </div>
+      <hr>
       My third model was of a <strong>Treasure Chest</strong>. This chest is fully animated, the lid opening and closing. The wooden portions of the chest were textured to have planks
       by making subdivisions on the chest's flat faces, insetting them so that there are gaps between them, and then altering their shape using extrusions and resizings.
       The materials used on the metal parts of the chest were given a higher metallic value to reflect how they would look in real life.
@@ -112,11 +113,13 @@
       There is one button for each available model.
       <br>
       The bottom group of buttons, titled "Visual Effects", are used to alter the models in different ways.
-      There exists three "Visual Effects" buttons:
+      There exists four "Visual Effects" buttons:
       <br> <strong>The "Animation" button</strong> plays the model's associated animation one time.
-      <br> <strong>The "Wireframe" button</strong> toggles whether the wireframe of the model or the full render is displayed.
+      <br> <strong>The "Toggle Wireframe" button</strong> toggles whether the wireframe of the model or the full render is displayed.
       <br> <strong>The "Rotate" button</strong> is a toggle that when enabled, continually rotates the model on a specified axis, and at a specified speed.
       The axis and speed of this rotation can also be altered by the user through the aforementioned panel GUI at the top right corner of the page, under the "Rotation" folder.
+      <br> <strong>The "Toggle Pixel Shading" button</strong> toggles whether a shader is applied to the model, in which the model becomes pixelised.
+      The settings for how pixelised the model will become when toggled on is displayed in the panel GUI under the 'Pixelation' folder
       <hr>
       <h2>Testing</h2>
       Testing was conducted by providing users access to the website locally on my home PC.
@@ -136,37 +139,11 @@
       Instead of rotating a set amount for each button click, it toggles a continuous rotation. Furthermore, the parameters for the rotation are tied directly into the GUI panel,
       providing more agency to the user.
       <br>
+      Finally, deeper understanding was shown through the Pixelation shader that can be toggled on models, and have the pixelation strength setting adjusted.
+      <br>
       <br>
     <br>
   </div>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <div class="navbar-text float-left copyright">
-        <p>
-          <span class="align-baseline"></span>
-          
-        </p>
-      </div>
-      <div class="navbar-text social mx-auto">
-        <a href="#">
-          <i class="fa fa-facebook-square" aria-hidden="true">
-          </i>
-        </a>
-        <a href="#">
-          <i class="fa fa-twitter" aria-hidden="true">
-          </i>
-        </a>
-        <a href="#">
-          <i class="fa fa-google-plus" aria-hidden="true">
-          </i>
-        </a>
-        <a href="#">
-          <i class="fa fa-github" aria-hidden="true">
-          </i>
-        </a>
-      </div>
-    </div>
-  </nav>
 
 </body>
 </html>

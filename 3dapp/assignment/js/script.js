@@ -1,12 +1,21 @@
 let scene, camera, renderer, clock, mixer, actions = [], mode, isWireframe = false;
 let loadedModel;
 let isRotating = false;
+
 let rotationSettings = {
   speed: 0.02,
   axis: "y"
 };
+
+let pixelSettings = {
+  enabled: false,
+  pixelSize: 4
+};
+
 let ambientLight, directionalLight, fillLight;
 let gui;
+let composer;
+let pixelPass;
 
 
 const assetPath = './assets/models/';
@@ -55,6 +64,26 @@ function init(){
 
   const canvas = document.getElementById('threeContainer');
   renderer = new THREE.WebGLRenderer({ canvas: canvas});
+  composer = new THREE.EffectComposer(renderer);
+
+  const renderPass = new THREE.RenderPass(scene, camera);
+  composer.addPass(renderPass);
+
+  pixelPass = new THREE.ShaderPass(THREE.PixelShader);
+
+  pixelPass.uniforms["resolution"].value = new THREE.Vector2(
+    window.innerWidth,
+    window.innerHeight
+  );
+
+  pixelPass.uniforms["resolution"].value.multiplyScalar(
+    window.devicePixelRatio
+  );
+
+  pixelPass.uniforms["pixelSize"].value = pixelSettings.pixelSize;
+  pixelPass.enabled = false;
+  composer.addPass(pixelPass);
+
   renderer.setPixelRatio(window.devicePixelRatio);
   resize();
 
@@ -109,6 +138,15 @@ function setupButtons() {
       playButtonSound();
       isWireframe = !isWireframe;
       toggleWireframe(isWireframe);
+    });
+  }
+
+  const pixelBtn = document.getElementById('pixelShading');
+  if (pixelBtn) {
+    pixelBtn.addEventListener('click', function () {
+      playButtonSound();
+      pixelSettings.enabled = !pixelSettings.enabled;
+      pixelPass.enabled = pixelSettings.enabled;
     });
   }
 
@@ -172,7 +210,7 @@ function animate(){
     loadedModel.rotateOnAxis(axis, rotationSettings.speed);
   }
 
-  renderer.render(scene, camera);
+  composer.render();
 }
 
 function toggleWireframe(enable) {
@@ -196,6 +234,11 @@ function resize() {
   camera.updateProjectionMatrix();
 
   renderer.setSize(width, height, false);
+  composer.setSize(width, height);
+  pixelPass.uniforms["resolution"].value.set(width, height);
+  pixelPass.uniforms["resolution"].value.multiplyScalar(window.devicePixelRatio);
+
+  
 
 }
 
@@ -260,6 +303,19 @@ function setupLightingGUI() {
   rotationFolder.add(rotationSettings, "speed", 0, 0.15, 0.01).name("Speed");
   rotationFolder.add(rotationSettings, "axis", ["x", "y", "z"]).name("Axis");
   rotationFolder.open();
+
+  const pixelFolder = gui.addFolder("Pixelation");
+  pixelFolder.add(pixelSettings, "enabled")
+  .name("Enabled")
+  .onChange(function(value) {
+    pixelPass.enabled = value;
+  });
+  pixelFolder.add(pixelSettings, "pixelSize", 1, 16, 1)
+  .name("Pixel Size")
+  .onChange(function(value) {
+    pixelPass.uniforms["pixelSize"].value = value;
+  });
+  pixelFolder.open();
 }
 
 init();

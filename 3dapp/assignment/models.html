@@ -72,6 +72,7 @@
               <button id="btn">Animation</button>
               <button id="toggleWireframe">Toggle Wireframe</button>
               <button id="rotate">Rotate</button>
+              <button id="pixelShading">Toggle Pixel Shading</button>
             </div>
           </div>
         </div>
@@ -81,40 +82,18 @@
     </div>
     <div class="container-fluid main-contents">
   </div>
-
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <div class="navbar-text float-left copyright">
-        <p>
-          <span class="align-baseline"></span>
-          
-        </p>
-      </div>
-      <div class="navbar-text social mx-auto">
-        <a href="#">
-          <i class="fa fa-facebook-square" aria-hidden="true">
-          </i>
-        </a>
-        <a href="#">
-          <i class="fa fa-twitter" aria-hidden="true">
-          </i>
-        </a>
-        <a href="#">
-          <i class="fa fa-google-plus" aria-hidden="true">
-          </i>
-        </a>
-        <a href="#">
-          <i class="fa fa-github" aria-hidden="true">
-          </i>
-        </a>
-      </div>
-    </div>
-  </nav>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lil-gui@0.18"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.106.0/examples/js/postprocessing/EffectComposer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.106.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.106.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.106.0/examples/js/postprocessing/CopyShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.106.0/examples/js/shaders/PixelShader.js"></script>
+
   <script src="./js/script.js"></script>
 </body>
 </html>

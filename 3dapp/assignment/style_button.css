@@ -24,6 +24,13 @@ body{
     border-radius: 12px;
 }
 
+#pixelShading {
+    background: rgb(216, 203, 201);
+    padding: 15px;
+    font-family: arial;
+    border-radius: 12px;
+}
+
 #rotate {
     background: rgb(216, 203, 201);
     padding: 15px;
