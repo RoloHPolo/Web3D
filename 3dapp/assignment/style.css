@@ -376,12 +376,4 @@ h1, h2, h3, h4, h5, h6 {
         color: rgb(12, 5, 3);
         font-size: 23px;
     }
-
-    .copyright {
-        padding-top: 20px;
-    }
-
-    .social {
-        padding-top: 7px;
-    }
 }
