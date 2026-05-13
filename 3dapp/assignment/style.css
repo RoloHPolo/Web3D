@@ -100,57 +100,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 3px;
 }
 
-.navbar_coca_cola {
-    background-color: #760003;
-    border-width: 0px;
-    min-height: 70px;
-}
-
-.navbar_coca_cola .navbar-brand {
-    color: rgb(245, 235, 235);
- }
-    
-.navbar_coca_cola .navbar-brand:hover {
-    color: green;
-}
-
-.navbar_coca_cola .navbar-nav > li > a {
-    color: white;  
-}
-
-.navbar_coca_cola .navbar-nav > li > a:hover, 
-.navbar_coca_cola .navbar-nav > li > a:focus {
-    color: green;  
-}
-
-.navbar_coca_cola .navbar-nav .nav-item {
-    margin-top: 0px;
-}
-
-.navbar_coca_cola .navbar-nav .nav-item > .active, 
-.navbar_coca_cola .navbar-nav > .active > a:hover, 
-.navbar_coca_cola .navbar-nav > .active > a:focus {
-    color:  #760003;
-    background-color: #3399ff;
-}
-
-.navbar_coca_cola .navbar-nav > li > a:hover, 
-.navbar_coca_cola  .navbar-nav > li > a:focus {
-    color: green;  
-}
-
-.navbar_coca_cola .navbar-toggler {
-    border-color: white;
-}
-
-.navbar_coca_cola  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.navbar_coca_cola .navbar-toggler {
-    outline: none !important;
-}
-
 .dropdown-menu {
     text-align: -webkit-left;
     background-color: #8ad6a9;
@@ -210,11 +159,6 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: rgb(50, 110, 50);
-    }
-
-    .navbar_coca_cola {
-        background-color: grey; 
-        min-height: 90px;
     }
 
     .navbar-text > a {
@@ -321,11 +265,6 @@ h1, h2, h3, h4, h5, h6 {
         padding-left: 8px;
     }
 
-    .navbar_coca_cola {
-        background-color: grey; 
-        min-height: 90px;
-    }
-
     .navbar-text > a {
         font-size: 10px;
     }
@@ -427,16 +366,6 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 0px;
         padding-top: 65px;
         padding-left: 12px;
-    }
-
-    .navbar_coca_cola {
-        background-color: grey; 
-        min-height: 120px;
-    }
-
-    .footer {
-        background-color: grey;
-        height: 75px;
     }
 
     .navbar-text > a {
